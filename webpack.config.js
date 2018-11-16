@@ -5,10 +5,10 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: {
-        script: '.src/js/index.js',
-        style: '.src/sass/style.scss'
-    },
+    entry: [
+        './src/js/index.js', 
+        './src/sass/style.scss'
+    ],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: ['html-loader']
+                use: 'html-loader'
             },
             {
                 test: /\.(eot|woff|woff2|ttf)$/,
@@ -72,7 +72,7 @@ module.exports = {
         }),
         new cleanWebpackPlugin(['dist'])
     ],
-    optmization: {
+    optimization: {
         splitChunks: {
             cacheGroups: {
                 default: false,
