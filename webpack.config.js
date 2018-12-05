@@ -11,7 +11,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'js/bundle.js'
     },
     module: {
         rules: [
@@ -39,7 +39,9 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'assets/font',
+                            publicPath: '../assets/font'
                         }
                     }
                 ]
@@ -50,7 +52,8 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'assets/img'
                         }
                     }
                 ]
@@ -75,8 +78,6 @@ module.exports = {
     optimization: {
         splitChunks: {
             cacheGroups: {
-                default: false,
-                vendors: false,
                 vendor: {
                     chunks: 'all',
                     test: /node_modules/,
@@ -88,7 +89,8 @@ module.exports = {
     resolve: {
         modules: ['node_modules'],
         alias: {
-            'owl.carousel': 'owl.carousel/dist/owl.carousel.min.js'
+            'owl.carousel': 'owl.carousel/dist/owl.carousel.min.js',
+            'image': path.resolve(__dirname, 'src/assets/img')
         }
     }
 }

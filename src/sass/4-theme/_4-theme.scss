@@ -1,0 +1,64 @@
+/* 4.1 Logo */
+.t-logo {
+    max-height: 2rem;
+    max-width: 5rem;
+}
+/* 4.2 Header Background */
+.t-header-bg {
+    background: $header-bg;
+    @include lg-screen {
+        background: transparent;
+    }
+}
+/* 4.3 Section Padding */
+.t-section-gap {
+    padding: 9rem 0;
+}
+/* 4.4 Section Style Text */
+.t-style-text {
+    color: $features-four;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .15rem;
+    display: block;
+    &--light {
+        @extend .t-style-text;
+        color: $light;
+    }
+    &--blue {
+        @extend .t-style-text;
+        color: $features-three;
+    }
+}
+/* 4.5 Section Title */
+.t-section-title {
+    text-transform: uppercase;
+    color: $heading-text;
+}
+/* 4.6 Body text */
+.t-body-text {
+    color: $body-text;
+}
+/* 4.7 padding for medium screen only */
+.t-md-gap {
+    @include md-screen {
+        padding: 6rem 0;
+    }
+}
+/* 4.8 Vertical alignment */
+.t-center-vertical {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}
+/* 4.9 theme Color */
+.t-theme-color {
+    color: $features-four;
+    &-light {
+        color: lighten($features-two, 15);
+    }
+}
+/* 4.10 Rating Color */
+.t-rating {
+    color: $rating;
+}
